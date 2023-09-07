@@ -5,7 +5,7 @@ from rest_framework.exceptions import AuthenticationFailed
 from .serializer import UserSerializer
 import jwt, datetime
 
-from .models import Book, User
+from .models import User
 # Create your views here.
 
 class LoginAPI(APIView):
@@ -73,7 +73,3 @@ class LogoutAPI(APIView):
         }
 
         return response
-
-class BookAPI(APIView):
-    def get(self, request):
-        book = Book.objects.all()
